@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мое Портфолио</title>
+    <style>
+        /* Общие сбросы стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка и Навигация */
+header {
+    background-color: #1a1a1e;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #29292e;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4fc3f7;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #a8a8b3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4fc3f7;
+}
+
+/* Главный баннер */
+.hero {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(to bottom, #1a1a1e, #121214);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #a8a8b3;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #4fc3f7;
+    color: #121214;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #29b6f6;
+    transform: translateY(-2px);
+}
+
+/* Секции общего назначения */
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #4fc3f7;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Обо мне & Навыки */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.skills {
+    margin-top: 30px;
+}
+
+.skills h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: #29292e;
+    color: #4fc3f7;
+    padding: 6px 14px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #3a3a42;
+}
+
+/* Сетка проектов */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #1a1a1e;
+    border: 1px solid #29292e;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #4fc3f7;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.project-info p {
+    color: #a8a8b3;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    color: #4fc3f7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* Контакты */
+.contact-section {
+    text-align: center;
+    background-color: #1a1a1e;
+}
+
+.contact-section p {
+    margin-bottom: 30px;
+    color: #a8a8b3;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-item {
+    color: #ffffff;
+    background-color: #29292e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid #3a3a42;
+    transition: all 0.3s;
+}
+
+.contact-item:hover {
+    background-color: #4fc3f7;
+    color: #121214;
+    border-color: #4fc3f7;
+}
+
+/* Подвал */
+footer {
+    background-color: #121214;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #29292e;
+    color: #737380;
+    font-size: 0.9rem;
+}
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">МоёПортфолио</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Привет, я Дуйсенбек Жасулан 👋</h1>
+            <p>Создаю современные, адаптивные и удобные веб-сайты.</p>
+            <a href="#projects" class="btn">Посмотреть работы</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>Обо мне</h2>
+            <div class="about-content">
+                <img src="яяя.jpeg" alt="Моё фото" class="profile-img">
+                <p>Я начинающий веб-разработчик. Изучаю технологии фронтенда, создаю пет-проекты и стремлюсь к созданию качественного пользовательского опыта. Люблю решать сложные задачи и постоянно учиться новому.</p>
+                <div class="skills">
+                    <h3>Мои навыки:</h3>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .profile-img {
+    width: 180px;      /* Ширина фото */
+    height: 180px;     /* Высота фото */
+    border-radius: 50%; /* Делает фото круглым */
+    object-fit: cover;  /* Чтобы лицо не сжималось */
+    margin-bottom: 20px;
+    border: 3px solid #4fc3f7; /* Красивая рамка в цвет сайта */
+}
+</style>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Мои Проекты</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Презентация по экологии</h3>
+                        <p>Интерактивная веб-страница, посвященная проблеме отходов и кризису загрязнения.</p>
+                        <a href="#" class="project-link">Подробнее →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Сайт финансовой грамотности</h3>
+                        <p>Лендинг с калькулятором бюджета и советами по управлению личными финансами.</p>
+                        <a href="#" class="project-link">Подробнее →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Веб-интерфейс трекера</h3>
+                        <p>Минималистичное приложение для отслеживания ежедневных задач и целей.</p>
+                        <a href="#" class="project-link">Подробнее →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contact-section">
+        <div class="container">
+            <h2>Контакты</h2>
+            <p>Хотите обсудить проект или сотрудничество? Напишите мне!</p>
+            <div class="contact-links">
+                <a href="mailto:duysenbek.zhasulan@gmail.com" class="contact-item">Email</a>
+                <a href="https://t.me/userskeletonss" target="_blank" class="contact-item">Telegram</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
